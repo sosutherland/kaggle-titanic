@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 import pandas as pd
 
 
@@ -9,7 +9,7 @@ def submission() -> pd.DataFrame:
 
 
 def main() -> None:
-    submission().to_csv(f"submissions/{os.path.basename(__file__)}.csv", index=False)
+    submission().to_csv(f"submissions/{Path(__file__).stem}.csv", index=False)
 
 
 if __name__ == "__main__":
